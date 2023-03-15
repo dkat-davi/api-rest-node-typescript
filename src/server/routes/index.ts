@@ -10,9 +10,8 @@ router.get('/', (request, response) => {
   return response.send("Hello World!");
 });
 
-router.post(
-  '/cidades',
-  CidadeController.createValidation,
-  CidadeController.create);
+router.get('/cidades', CidadeController.getAllValidation, CidadeController.getAll);
+router.post('/cidades', CidadeController.createValidation, CidadeController.create);
+
 
 export {router};
